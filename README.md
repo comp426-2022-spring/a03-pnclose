@@ -14,5 +14,4 @@ These links for every assignment are listed in the SECRETS repo: https://github.
 If you clone this repo directly, it will not be added to the organization as an individual repo associated with your account and you will not be able to push to it.
 
 ## Instructions
-
 Full instructions for this assignment are available at: https://comp426.johndmart.in/a/03/
