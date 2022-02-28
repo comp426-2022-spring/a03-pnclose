@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://pnclose: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@github.com/comp426-2022-spring/a03-pnclose.git"
+    "url": "git+https://github.com/comp426-2022-spring/a03-pnclose.git"
   },
   "author": "Peter Close",
   "license": "GPL-3.0-or-later",
@@ -20,6 +20,6 @@
   "homepage": "https://github.com/comp426-2022-spring/a03-pnclose#readme",
   "dependencies": {
     "express": "^4.17.3",
-    "minimist": "^1.2.5"
+    "minimist": "^2.0.15"
   }
 }

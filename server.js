@@ -1,6 +1,6 @@
 // Require Express.js
 // Start app
-import minimist from 'minimist';
+import minimist from 'minimist'
 import express from 'express'
 const app = express()
 
@@ -29,7 +29,7 @@ const server = app.listen(port, () => {
 // -------------------------------- COIN STUFF ----------------------------------
 // ------------------------------------------------------------------------------
 function coinFlip() {
-    return Math.random() < 0.5 ? ('heads') : ('tails')
+    return Math.random() < 0.5 ? 'heads' : 'tails'
 }
 
 function coinFlips(flips) {
@@ -51,7 +51,9 @@ function countFlips(flips) {
         tCnt++;
       }
     }
-  
+    if(hCnt == 0 && tCnt == 0) {
+      return {}
+    }
     if(hCnt == 0) {
       return {tails: tCnt}
     }
@@ -74,12 +76,6 @@ function flipACoin(call) {
     return { call: call, flip: res, result: result }
 }
 
-// Default response for any other request
-app.use(function(req, res){
-  res.status(404).send('404 NOT FOUND')
-  res.type("text/plain")
-})
-  
 // ------------------------------------------------------------------------------
 // -------------------------------- ENDPOINTS ----------------------------------
 // ------------------------------------------------------------------------------
@@ -102,12 +98,12 @@ app.get('/app/flips/:number/', (req, res) => {
 })
 
 // endpoints for heads and tails
-app.get('/app/flips/call/heads/', (req, res) => {
+app.get('/app/flip/call/heads/', (req, res) => {
     var temp = flipACoin('heads')
     res.status(200).json(temp)
 })
 
-app.get('/app/flips/call/tails/', (req, res) => {
+app.get('/app/flip/call/tails/', (req, res) => {
   var temp = flipACoin('tails')
   res.status(200).json(temp)
 })
@@ -116,6 +112,13 @@ app.use(function(req, res) {
   res.status(404).send("Endpoint does not exist")
   res.type("text/plain")
 })
+
+// Default response for any other request
+app.use(function(req, res){
+  res.status(404).send('404 NOT FOUND')
+  res.type("text/plain")
+})
+  
 
 
 
