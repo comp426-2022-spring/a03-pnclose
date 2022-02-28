@@ -91,13 +91,19 @@ app.get('/app/', (req, res) => {
 })
 
 app.get('/app/flip/', (req, res) => {
-    var res = coinFlip()
-    res.status(200).json({'flip' : flip})
+    var temp = coinFlip()
+    res.status(200).json({'flip' : temp})
 })
 
 app.get('/app/flips/:number/', (req, res) => {
-    var res = coinFlips(req.params.number)
-    res.status(200).json({'raw': flips, 'summary': countFlips(flips)})
+    var temp = coinFlips(req.params.number)
+    res.status(200).json({'raw': temp, 'summary': countFlips(temp)})
+})
+
+// endpoints for heads and tails
+app.get('/app/flips/heads/', (req, res) => {
+    var temp = flipACoin('heads')
+    res.status(200).json(temp)
 })
 
 
