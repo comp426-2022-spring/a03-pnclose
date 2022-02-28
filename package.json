@@ -1,0 +1,25 @@
+{
+  "name": "a03-pnclose",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://pnclose: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@github.com/comp426-2022-spring/a03-pnclose.git"
+  },
+  "author": "Peter Close",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-spring/a03-pnclose/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-spring/a03-pnclose#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "minimist": "^1.2.5"
+  }
+}
