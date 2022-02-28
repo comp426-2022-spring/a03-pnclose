@@ -79,6 +79,7 @@ function flipACoin(call) {
 // Default response for any other request
 app.use(function(req, res){
     res.status(404).send('404 NOT FOUND')
+    res.type("text/plain")
 })
 
 app.get('/app/', (req, res) => {
@@ -105,6 +106,20 @@ app.get('/app/flips/heads/', (req, res) => {
     var temp = flipACoin('heads')
     res.status(200).json(temp)
 })
+
+app.get('/app/flips/tails/', (req, res) => {
+  var temp = flipACoin('tails')
+  res.status(200).json(temp)
+})
+
+app.use(function(req, res) {
+  res.status(404).send("Endpoint does not exist")
+  res.type("text/plain")
+})
+
+
+
+
 
 
 
